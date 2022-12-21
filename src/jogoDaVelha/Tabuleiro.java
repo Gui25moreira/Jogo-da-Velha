@@ -73,32 +73,32 @@ public class Tabuleiro {
 		return 0;
 
 	}
-	 
-	public int verificaDiagonais() {
-		
-		int somaDiagonalPrincipal = 0;
-	    for (int i = 0; i < tabuleiro.length; i++) {
-	        for (int j = 0; j < tabuleiro[i].length; j++) {
-	            if (i == j) {
-	                somaDiagonalPrincipal += tabuleiro[i][j];
-	            }
-	        }
-	    }
-	    
-	    int j = tabuleiro.length - 1;
-        int somaDiagonalSecundaria = 0;
 
-        for (int i = 0; i < tabuleiro.length; i++) {
-            somaDiagonalSecundaria += tabuleiro[i][j];
-        }
-	    
+	public int verificaDiagonais() {
+
+		int somaDiagonalPrincipal = 0;
+		for (int i = 0; i < tabuleiro.length; i++) {
+			for (int j = 0; j < tabuleiro[i].length; j++) {
+				if (i == j) {
+					somaDiagonalPrincipal += tabuleiro[i][j];
+				}
+			}
+		}
+
+		int j = tabuleiro.length - 1;
+		int somaDiagonalSecundaria = 0;
+
+		for (int i = 0; i < tabuleiro.length; i++) {
+			somaDiagonalSecundaria += tabuleiro[i][j];
+		}
+
 		if ((somaDiagonalPrincipal) == -3)
 			return -1;
-		if ((somaDiagonalPrincipal) ==  3)
+		if ((somaDiagonalPrincipal) == 3)
 			return 1;
 		if ((somaDiagonalSecundaria) == -3)
 			return -1;
-		if ((somaDiagonalSecundaria) ==  3)
+		if ((somaDiagonalSecundaria) == 3)
 			return 1;
 
 		return 0;

@@ -6,16 +6,20 @@ public class JogoDaVelha {
 	private static Jogador jogador1;
 	private static Jogador jogador2;
 	private static int rodada = 1, vez = 1;
-	
+
 	public static void main(String[] args) {
-		
+
 		tabuleiro = new Tabuleiro();
-		
+
 		jogador1 = new Jogador(1);
 		jogador2 = new Jogador(2);
 
-		while (Jogar()) {
-			;
+		try {
+			while (Jogar()) {
+				;
+			}
+		} catch (RegraNegocioException e) {
+			System.out.println(e.getMessage());
 		}
 	}
 
